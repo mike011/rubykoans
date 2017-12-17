@@ -84,7 +84,7 @@ class AboutSandwichCode < Neo::Koan
   rend
 
   def test_finding_lines2
-    assert_equal __, find_line2("example_file.txt")
+    assert_equal 4, find_line2("example_file.txt")
   end
 
   # ------------------------------------------------------------------
@@ -103,4 +103,6 @@ class AboutSandwichCode < Neo::Koan
     assert_equal __, count_lines3("example_file.txt")
   end
 
+  end
 end
+
