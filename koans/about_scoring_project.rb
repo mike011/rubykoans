@@ -33,14 +33,12 @@ def score(dice)
   x = 0
   y = 1
   r = 0
-  n = true
+  dice = dice.sort()
   loop do
-    if x + 1 < dice.length
-      if dice[x] == dice[x + 1]
-        y += 1
-        n = true
-      else
-        n = false
+    if x + 2 < dice.length
+      if dice[x] == dice[x + 1] && dice[x] == dice[x + 2]
+        y += 2
+        x += 2
       end
     else
       y = 1
@@ -52,24 +50,15 @@ def score(dice)
       else
         r += dice[x] * 100
       end
-    elsif !n && y == 1 && dice[x] == 1
+    elsif y == 1 && dice[x] == 1
       r += 100
-    elsif !n && dice[x] == 5
+    elsif dice[x] == 5
       r += 50
     end
 
     break if x > dice.length
     x += 1
   end
-
-  if dice.length == 1
-    if dice[0] == 1
-      r += 100
-    elsif dice[0] = 5
-      r = 50
-    end
-  end
-
   r
 end
 
