@@ -16,7 +16,7 @@
 def triangle(a, b, c)
 
   a, b, c = [a,b,c].sort
-  if a <= 0
+  if a <= 0 || a + b <= c
     raise TriangleError
   end
   if a == b && b == c
