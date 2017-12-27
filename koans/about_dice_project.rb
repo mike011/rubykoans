@@ -14,11 +14,7 @@ class DiceSet
   end
 
   def roll(amount)
-    x = 0
-    while x < amount do
-      @values[x] = rand(1..6).to_i
-      x += 1
-    end
+    @values = (0...amount).map{rand(1..6)}
   end
 end
 class AboutDiceProject < Neo::Koan
